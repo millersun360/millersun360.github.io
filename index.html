@@ -17,11 +17,6 @@
             padding: 20px;
         }
 
-        .post h2 {
-            color: #00ff00;
-            font-size: 24px;
-        }
-
         .post p {
             margin: 10px 0;
             display: inline-block;
@@ -45,20 +40,24 @@
 <body>
     <div class="container">
         <div class="post">
-            <p id="post1-content"></p>
+            <p id="post-content"></p>
             <span class="cursor"></span>
         </div>
     </div>
 
     <script>
-        // Function to simulate the typewriter effect
+        // Function to simulate the typewriter effect with new lines
         function typeWriter(text, elementId, speed) {
             const element = document.getElementById(elementId);
             let i = 0;
 
             function type() {
                 if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
+                    if (text.charAt(i) === '\n') {
+                        element.innerHTML += '<br>';
+                    } else {
+                        element.innerHTML += text.charAt(i);
+                    }
                     i++;
                     setTimeout(type, speed);
                 }
@@ -68,7 +67,7 @@
         }
 
         // Simulate typewriter effect for post content
-        typeWriter("Welcome.\nI hope you find the following useful...\n", "post1-content", 75);
+        typeWriter("This is your blog post in the style of a Windows terminal.\n\nYou can write your content here,\nand it will appear in the terminal-like format.", "post-content", 50);
     </script>
 </body>
 </html>
