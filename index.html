@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Blog</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .post {
+            border: 1px solid #00ff00;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #000;
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2);
+        }
+
+        .post h2 {
+            color: #00ff00;
+            font-size: 24px;
+        }
+
+        .post p {
+            margin: 10px 0;
+        }
+
+        .cursor::after {
+            content: '_';
+            animation: blink 0.8s linear infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post">
+            <h2>Terminal Blog Post 1</h2>
+            <p id="post1-content"></p>
+            <span class="cursor"></span>
+        </div>
+
+        <div class="post">
+            <h2>Terminal Blog Post 2</h2>
+            <p id="post2-content"></p>
+            <span class="cursor"></span>
+        </div>
+    </div>
+
+    <script>
+        // Function to simulate the typewriter effect
+        function typeWriter(text, elementId, speed) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+
+            type();
+        }
+
+        // Simulate typewriter effect for post content
+        typeWriter("This is your first blog post in the style of a Windows terminal. You can write your content here, and it will appear in the terminal-like format.", "post1-content", 50);
+
+        typeWriter("Here's another post with more content in the same terminal style. You can continue adding posts as needed.", "post2-content", 50);
+    </script>
+</body>
+</html>
