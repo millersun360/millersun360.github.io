@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terminal Blog</title>
+    <title>Digital Forensics Debriefed</title>
     <style>
         body {
             background-color: #0f0f0f;
@@ -79,7 +79,7 @@
                 if (i < text.length) {
                     if (text.charAt(i) === '\n') {
                         element.innerHTML += '<br>';
-                    } else {
+                    }else {
                         element.innerHTML += text.charAt(i);
                     }
                     i++;
@@ -91,9 +91,17 @@
         }
 
         // Simulate typewriter effect for post content
-        typeWriter("Digital Forensics Debriefed [Versionn 0.0.1]\n\nWelcome.\nI hope you find the following useful...", "post-content", 34);
+        let homepage = 'Digital Forensics Debriefed [Version 0.0.1]\n\n' + 
+            'Welcome.\n' +
+            'I hope you find the following useful...\n\n' +
+            'Article: U.S. Government Data Breach;
+        typeWriter(homepage, "post-content", 34);
+        function rep() {
+        document.body.innerHTML
+            = document.body.innerHTML
+            .replace("Article: U.S. Government Data Breach", "<a href="www.google.com">Article: U.S. Government Data Breach</a>");
+        }
     </script>
-
-    <a href="millersun.github.io/blog_post1" target="_blank">Article: Government Data Breach</a> 
+ 
 </body>
 </html>
