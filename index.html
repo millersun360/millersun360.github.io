@@ -35,6 +35,30 @@
                 opacity: 1;
             }
         }
+
+        a:link {
+          color: #00ff00;
+          background-color: transparent;
+          text-decoration: none;
+        }
+        
+        a:visited {
+          color: pink;
+          background-color: transparent;
+          text-decoration: none;
+        }
+        
+        a:hover {
+          color: red;
+          background-color: transparent;
+          text-decoration: underline;
+        }
+        
+        a:active {
+          color: yellow;
+          background-color: transparent;
+          text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +68,7 @@
             <span class="cursor"></span>
         </div>
     </div>
-
+    
     <script>
         // Function to simulate the typewriter effect with new lines
         function typeWriter(text, elementId, speed) {
@@ -67,7 +91,9 @@
         }
 
         // Simulate typewriter effect for post content
-        typeWriter("This is your blog post in the style of a Windows terminal.\n\nYou can write your content here,\nand it will appear in the terminal-like format.", "post-content", 50);
+        typeWriter("Welcome.\n\nI hope you find the following useful...", "post-content", 34);
     </script>
+
+    <a href="millersun.github.io/blog_post1" target="_blank">Article: Government Data Breach</a> 
 </body>
 </html>
